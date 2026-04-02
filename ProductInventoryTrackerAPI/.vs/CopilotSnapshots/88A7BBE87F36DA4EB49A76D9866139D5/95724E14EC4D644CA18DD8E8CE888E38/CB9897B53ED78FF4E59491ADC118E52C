@@ -1,0 +1,148 @@
+﻿using ProductInventoryTrackerAPI.Common;
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Service.Repository.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+
+namespace ProductInventoryTrackerAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CategoriesController : BaseController
+    {
+        private readonly ICategoryRepository _repository;
+        private readonly ILogger<CategoriesController> _logger;
+
+        public CategoriesController(ICategoryRepository repository, ILogger<CategoriesController> logger)
+        {
+            _repository = repository;
+            _logger = logger;
+        }
+
+        [HttpGet("list")]
+        [ProducesResponseType(typeof(Page), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetCategories([FromQuery] SearchRequestModel searchModel)
+        {
+            try
+            {
+                var parameters = FillParamesFromModel(searchModel);
+                var result = await _repository.GetCategoriesAsync(parameters);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetCategories");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("{categorySid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetCategoryBySid(string categorySid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(categorySid))
+                    return BadRequest("Category SID is required.");
+
+                var result = await _repository.GetCategoryBySidAsync(categorySid);
+                if (result == null)
+                    return NotFound("Category not found.");
+
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetCategoryBySid");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("add")]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> AddCategory([FromBody] CategoryRequestModel model)
+        {
+            try
+            {
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.AddCategoryAsync(model);
+                return CreatedAtAction(nameof(GetCategoryBySid), new { categorySid = result.CategorySid }, result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in AddCategory");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPut("update/{categorySid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> UpdateCategory(string categorySid, [FromBody] CategoryRequestModel model)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(categorySid))
+                    return BadRequest("Category SID is required.");
+
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.UpdateCategoryAsync(categorySid, model);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in UpdateCategory");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpDelete("delete/{categorySid}")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> DeleteCategory(string categorySid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(categorySid))
+                    return BadRequest("Category SID is required.");
+
+                await _repository.DeleteCategoryAsync(categorySid);
+                return NoContent();
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in DeleteCategory");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+    }
+}

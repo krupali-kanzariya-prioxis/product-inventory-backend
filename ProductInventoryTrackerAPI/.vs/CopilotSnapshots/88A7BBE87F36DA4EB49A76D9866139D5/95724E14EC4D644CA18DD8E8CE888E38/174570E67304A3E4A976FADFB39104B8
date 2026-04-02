@@ -1,0 +1,16 @@
+﻿using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Interfaces
+{
+    public interface IUserRepository
+    {
+        Task<Page> GetUsersAsync(Dictionary<string, object> parameters);
+        Task<UserResponseModel?> GetUserBySidAsync(string userSid);
+        Task<UserResponseModel> AddUserAsync(UserRequestModel model);
+        Task<UserResponseModel> UpdateUserAsync(string userSid, UserRequestModel model);
+        Task DeleteUserAsync(string userSid);
+        Task<UserResponseModel?> GetUserByEmailAsync(string email);
+    }
+}

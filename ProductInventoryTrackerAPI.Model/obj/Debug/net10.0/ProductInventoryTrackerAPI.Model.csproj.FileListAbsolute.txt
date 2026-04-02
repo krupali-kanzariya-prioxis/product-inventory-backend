@@ -1,0 +1,14 @@
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\bin\Debug\net10.0\ProductInventoryTrackerAPI.Model.deps.json
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\bin\Debug\net10.0\ProductInventoryTrackerAPI.Model.runtimeconfig.json
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\bin\Debug\net10.0\ProductInventoryTrackerAPI.Model.dll
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\bin\Debug\net10.0\ProductInventoryTrackerAPI.Model.pdb
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ProductInventoryTrackerAPI.Model.csproj.AssemblyReference.cache
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ProductInventoryTrackerAPI.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ProductInventoryTrackerAPI.Model.AssemblyInfoInputs.cache
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ProductInventoryTrackerAPI.Model.AssemblyInfo.cs
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ProductInventoryTrackerAPI.Model.csproj.CoreCompileInputs.cache
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ProductInventoryTrackerAPI.Model.dll
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\refint\ProductInventoryTrackerAPI.Model.dll
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ProductInventoryTrackerAPI.Model.pdb
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ProductInventoryTrackerAPI.Model.genruntimeconfig.cache
+C:\Users\KrupaliKanzariya\Downloads\ProductInventoryTracker\ProductInventoryTrackerAPI.Model\obj\Debug\net10.0\ref\ProductInventoryTrackerAPI.Model.dll

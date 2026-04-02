@@ -1,0 +1,148 @@
+﻿using ProductInventoryTrackerAPI.Common;
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Service.Repository.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+
+namespace ProductInventoryTrackerAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class SuppliersController : BaseController
+    {
+        private readonly ISupplierRepository _repository;
+        private readonly ILogger<SuppliersController> _logger;
+
+        public SuppliersController(ISupplierRepository repository, ILogger<SuppliersController> logger)
+        {
+            _repository = repository;
+            _logger = logger;
+        }
+
+        [HttpGet("list")]
+        [ProducesResponseType(typeof(Page), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetSuppliers([FromQuery] SearchRequestModel searchModel)
+        {
+            try
+            {
+                var parameters = FillParamesFromModel(searchModel);
+                var result = await _repository.GetSuppliersAsync(parameters);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetSuppliers");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("{supplierSid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetSupplierBySid(string supplierSid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(supplierSid))
+                    return BadRequest("Supplier SID is required.");
+
+                var result = await _repository.GetSupplierBySidAsync(supplierSid);
+                if (result == null)
+                    return NotFound("Supplier not found.");
+
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetSupplierBySid");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("add")]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> AddSupplier([FromBody] SupplierRequestModel model)
+        {
+            try
+            {
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.AddSupplierAsync(model);
+                return CreatedAtAction(nameof(GetSupplierBySid), new { supplierSid = result.SupplierSid }, result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in AddSupplier");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPut("update/{supplierSid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> UpdateSupplier(string supplierSid, [FromBody] SupplierRequestModel model)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(supplierSid))
+                    return BadRequest("Supplier SID is required.");
+
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.UpdateSupplierAsync(supplierSid, model);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in UpdateSupplier");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpDelete("delete/{supplierSid}")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> DeleteSupplier(string supplierSid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(supplierSid))
+                    return BadRequest("Supplier SID is required.");
+
+                await _repository.DeleteSupplierAsync(supplierSid);
+                return NoContent();
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in DeleteSupplier");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+    }
+}

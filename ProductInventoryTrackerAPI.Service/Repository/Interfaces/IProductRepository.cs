@@ -1,0 +1,18 @@
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Interfaces
+{
+    public interface IProductRepository
+    {
+        Task<Page> GetProductsAsync(Dictionary<string, object> parameters);
+        Task<ProductResponseModel?> GetProductBySidAsync(string productSid);
+        Task<ProductResponseModel> AddProductAsync(ProductRequestModel model);
+        Task<ProductResponseModel> UpdateProductAsync(string productSid, ProductRequestModel model);
+        Task<bool> DeleteProductAsync(string productSid);
+        Task<Page> GetLowStockProductsAsync(Dictionary<string, object> parameters);
+        Task<IEnumerable<SelectListItem>?> DDLProductAsync(List<string>? filterSid = null, List<int>? filterId = null);
+    }
+}

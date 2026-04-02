@@ -1,0 +1,17 @@
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Interfaces
+{
+    public interface ICategoryRepository
+    {
+        Task<Page> GetCategoriesAsync(Dictionary<string, object> parameters);
+        Task<CategoryResponseModel?> GetCategoryBySidAsync(string categorySid);
+        Task<CategoryResponseModel> AddCategoryAsync(CategoryRequestModel model);
+        Task<CategoryResponseModel> UpdateCategoryAsync(string categorySid, CategoryRequestModel model);
+        Task<bool> DeleteCategoryAsync(string categorySid);
+        Task<IEnumerable<SelectListItem>?> DDLCategoryAsync(List<string>? filterSid = null, List<int>? filterId = null);
+    }
+}

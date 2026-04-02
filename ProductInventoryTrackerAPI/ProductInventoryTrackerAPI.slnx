@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="../ProductInventoryTrackerAPI.Common/ProductInventoryTrackerAPI.Common.csproj" />
+  <Project Path="../ProductInventoryTrackerAPI.Model/ProductInventoryTrackerAPI.Model.csproj" />
+  <Project Path="../ProductInventoryTrackerAPI.Service/ProductInventoryTrackerAPI.Service.csproj" />
+  <Project Path="ProductInventoryTrackerAPI.csproj" />
+</Solution>

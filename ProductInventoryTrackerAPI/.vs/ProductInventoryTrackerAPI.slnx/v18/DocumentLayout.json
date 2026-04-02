@@ -1,0 +1,1059 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EC92299B-E110-406D-8706-B4CE498137F2}|..\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.common\\commonhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\implementation\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\implementation\\stocktransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repositoryfactory\\sprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\spdbcontext\\storeprocedureresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\commonmodel\\searchrequestpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\implementation\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC92299B-E110-406D-8706-B4CE498137F2}|..\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.common\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\interfaces\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\api_documentation.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:api_documentation.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\developer_quick_reference.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:developer_quick_reference.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\implementation_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:implementation_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\implementation_checklist.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:implementation_checklist.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\api_testing_examples.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:api_testing_examples.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\refactoring_completion_report.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:refactoring_completion_report.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\refactoring_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:refactoring_summary.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\CategoryRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\helper\\unitofworkservicecollectionextentions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:helper\\unitofworkservicecollectionextentions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\implementation\\announcementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\productinventorydb\\productinventorydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\validationclass\\announcementrequestmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\interfaces\\iannouncementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\commonmodel\\page.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\commonmodel\\searchpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC92299B-E110-406D-8706-B4CE498137F2}|..\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.common\\httpstatuscodeexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC92299B-E110-406D-8706-B4CE498137F2}|..\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.common\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC92299B-E110-406D-8706-B4CE498137F2}|..\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.common\\productinventorytrackerapi.common.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\helper\\custommiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:helper\\custommiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\helper\\httpstatuscodeextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:helper\\httpstatuscodeextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\requestmodel\\categoryrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\responsemodel\\categoryresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\requestmodel\\productrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\responsemodel\\productresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\requestmodel\\supplierrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\responsemodel\\supplierresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\requestmodel\\userrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\responsemodel\\userresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\requestmodel\\stocktransactionrequestmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\responsemodel\\stocktransactionresponsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\validationclass\\categoryrequestmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\validationclass\\productrequestmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\validationclass\\supplierrequestmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\validationclass\\userrequestmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC8EA38B-332E-0780-8994-5E2119D56E6F}|..\\ProductInventoryTrackerAPI.Model\\ProductInventoryTrackerAPI.Model.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.model\\validationclass\\stocktransactionrequestmodelvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\interfaces\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\interfaces\\isupplierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\interfaces\\istocktransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\UserRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\SupplierRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\implementation\\supplierrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A8FAAAA0-9A6E-01E7-2073-48B43FC21E47}|..\\ProductInventoryTrackerAPI.Service\\ProductInventoryTrackerAPI.Service.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi.service\\repository\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\ProductsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\StockTransactionsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\SuppliersController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\UsersController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\CategoriesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\controllers\\stocktransactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:controllers\\stocktransactionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|c:\\users\\krupalikanzariya\\downloads\\productinventorytracker\\productinventorytrackerapi\\.github\\copilot-instructions.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{427F903F-8411-F229-2F63-DC8113A88276}|ProductInventoryTrackerAPI.csproj|solutionrelative:.github\\copilot-instructions.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SpRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\RepositoryFactory\\SpRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\RepositoryFactory\\SpRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\RepositoryFactory\\SpRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\RepositoryFactory\\SpRepository.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:53:54.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\ProductRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\ProductRepository.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAlwCgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:25:31.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StockTransactionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\StockTransactionRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\StockTransactionRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\StockTransactionRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\StockTransactionRepository.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAAAAAM4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:25:59.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CommonHelper.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\CommonHelper.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Common\\CommonHelper.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\CommonHelper.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Common\\CommonHelper.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAlwCcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:32:57.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAwAAABwZmZmZuY8wBkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:27:26.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "Controllers\\BaseController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAApwFsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:39:09.529Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StoreProcedureResult.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\SpDbContext\\StoreProcedureResult.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\SpDbContext\\StoreProcedureResult.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\SpDbContext\\StoreProcedureResult.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\SpDbContext\\StoreProcedureResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T06:09:53.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SearchRequestPage.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\CommonModel\\SearchRequestPage.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\CommonModel\\SearchRequestPage.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\CommonModel\\SearchRequestPage.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\CommonModel\\SearchRequestPage.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAswG0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:39:38.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IMPLEMENTATION_SUMMARY.md",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\IMPLEMENTATION_SUMMARY.md",
+              "RelativeDocumentMoniker": "IMPLEMENTATION_SUMMARY.md",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\IMPLEMENTATION_SUMMARY.md",
+              "RelativeToolTip": "IMPLEMENTATION_SUMMARY.md",
+              "ViewState": "AgIAACUAAABAaWZmZiYgwBABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-31T09:26:04.55Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\CategoryRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\CategoryRepository.cs",
+              "ViewState": "AgIAACYAAAAAmJmZmZkOwEEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:25:33.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\Constants.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Common\\Constants.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\Constants.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Common\\Constants.cs",
+              "ViewState": "AgIAAB0AAACALzMzMzMLwCMAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:41:29.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T13:02:27.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "copilot-instructions.md",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\.github\\copilot-instructions.md",
+              "RelativeDocumentMoniker": ".github\\copilot-instructions.md",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\.github\\copilot-instructions.md",
+              "RelativeToolTip": ".github\\copilot-instructions.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAADAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-04-01T07:17:54.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IMPLEMENTATION_CHECKLIST.md",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\IMPLEMENTATION_CHECKLIST.md",
+              "RelativeDocumentMoniker": "IMPLEMENTATION_CHECKLIST.md",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\IMPLEMENTATION_CHECKLIST.md",
+              "RelativeToolTip": "IMPLEMENTATION_CHECKLIST.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-31T09:27:33.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IProductRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IProductRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IProductRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAEwA4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:22.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DEVELOPER_QUICK_REFERENCE.md",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\DEVELOPER_QUICK_REFERENCE.md",
+              "RelativeDocumentMoniker": "DEVELOPER_QUICK_REFERENCE.md",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\DEVELOPER_QUICK_REFERENCE.md",
+              "RelativeToolTip": "DEVELOPER_QUICK_REFERENCE.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL4BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-31T11:29:41.525Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "API_DOCUMENTATION.md",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\API_DOCUMENTATION.md",
+              "RelativeDocumentMoniker": "API_DOCUMENTATION.md",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\API_DOCUMENTATION.md",
+              "RelativeToolTip": "API_DOCUMENTATION.md",
+              "ViewState": "AgIAANwAAAAA12ZmZmYkwOoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-31T09:25:46.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "API_TESTING_EXAMPLES.md",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\API_TESTING_EXAMPLES.md",
+              "RelativeDocumentMoniker": "API_TESTING_EXAMPLES.md",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\API_TESTING_EXAMPLES.md",
+              "RelativeToolTip": "API_TESTING_EXAMPLES.md",
+              "ViewState": "AgIAAC0AAAAAbWZmZmYkwDUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-31T09:26:24.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-24T12:59:41.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "REFACTORING_COMPLETION_REPORT.md",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\REFACTORING_COMPLETION_REPORT.md",
+              "RelativeDocumentMoniker": "REFACTORING_COMPLETION_REPORT.md",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\REFACTORING_COMPLETION_REPORT.md",
+              "RelativeToolTip": "REFACTORING_COMPLETION_REPORT.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMwBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-31T11:30:17.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "REFACTORING_SUMMARY.md",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\REFACTORING_SUMMARY.md",
+              "RelativeDocumentMoniker": "REFACTORING_SUMMARY.md",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\REFACTORING_SUMMARY.md",
+              "RelativeToolTip": "REFACTORING_SUMMARY.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-03-31T11:29:17.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:27:25.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "SuppliersController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\SuppliersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SuppliersController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\SuppliersController.cs",
+              "RelativeToolTip": "Controllers\\SuppliersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:27:26.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "StockTransactionsController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\StockTransactionsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StockTransactionsController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\StockTransactionsController.cs",
+              "RelativeToolTip": "Controllers\\StockTransactionsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:27:26.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\CategoryRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:24:48.657Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:27:26.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "SupplierRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\SupplierRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\SupplierRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\SupplierRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\SupplierRepository.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAIBZwN8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:25:29.951Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\UserRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\UserRepository.cs",
+              "ViewState": "AgIAAAMBAAAAAAAAAEBVwAcBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:26:01.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\UsersController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\UsersController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\UsersController.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:26:57.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\CategoriesController.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\CategoriesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:26:57.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "SupplierRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\SupplierRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\SupplierRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\SupplierRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\SupplierRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:24:48.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "SuppliersController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\SuppliersController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\SuppliersController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\SuppliersController.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\SuppliersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:26:57.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "StockTransactionsController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\StockTransactionsController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\StockTransactionsController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\StockTransactionsController.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\StockTransactionsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:26:57.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\ProductsController.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\ProductsController.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\1408429843\\ProductsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:26:57.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\UserRepository.cs",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\CopilotBaseline\\Deleted\\-1762488009\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T11:24:48.254Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\UnitOfWork\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\UnitOfWork\\UnitOfWork.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\UnitOfWork\\UnitOfWork.cs",
+              "ViewState": "AgIAABAAAACAzMzMzEwXwBwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:57:52.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IStockTransactionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IStockTransactionRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IStockTransactionRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IStockTransactionRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IStockTransactionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:28.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\ICategoryRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\ICategoryRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\ICategoryRepository.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAMBUwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:20.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "CategoryRequestModelValidator.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\CategoryRequestModelValidator.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\CategoryRequestModelValidator.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\CategoryRequestModelValidator.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\CategoryRequestModelValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:52.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "StockTransactionResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\StockTransactionResponseModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\StockTransactionResponseModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\StockTransactionResponseModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\StockTransactionResponseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:32.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "StockTransactionRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\StockTransactionRequestModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\StockTransactionRequestModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\StockTransactionRequestModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\StockTransactionRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:26.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAMBUwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:26.676Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ISupplierRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\ISupplierRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\ISupplierRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\ISupplierRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\ISupplierRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAMBcwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:23.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "SupplierResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\SupplierResponseModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\SupplierResponseModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\SupplierResponseModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\SupplierResponseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:19.616Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "StockTransactionRequestModelValidator.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\StockTransactionRequestModelValidator.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\StockTransactionRequestModelValidator.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\StockTransactionRequestModelValidator.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\StockTransactionRequestModelValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:04.934Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "UserRequestModelValidator.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\UserRequestModelValidator.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\UserRequestModelValidator.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\UserRequestModelValidator.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\UserRequestModelValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:02.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "SupplierRequestModelValidator.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\SupplierRequestModelValidator.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\SupplierRequestModelValidator.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\SupplierRequestModelValidator.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\SupplierRequestModelValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:01.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "ProductRequestModelValidator.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\ProductRequestModelValidator.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\ProductRequestModelValidator.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\ProductRequestModelValidator.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\ProductRequestModelValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:17:00.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "SupplierRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\SupplierRequestModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\SupplierRequestModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\SupplierRequestModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\SupplierRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:17.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ProductResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\ProductResponseModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\ProductResponseModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\ProductResponseModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\ProductResponseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:15.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "ProductRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\ProductRequestModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\ProductRequestModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\ProductRequestModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\ProductRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:10.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CategoryResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\CategoryResponseModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\CategoryResponseModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\CategoryResponseModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\CategoryResponseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:06.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "UserResponseModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\UserResponseModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\UserResponseModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ResponseModel\\UserResponseModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ResponseModel\\UserResponseModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:24.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "UserRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\UserRequestModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\UserRequestModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\UserRequestModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\UserRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:16:21.984Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CategoryRequestModel.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\CategoryRequestModel.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\CategoryRequestModel.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\RequestModel\\CategoryRequestModel.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\RequestModel\\CategoryRequestModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T09:15:57.895Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UnitOfWorkServiceCollectionExtentions.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Helper\\UnitOfWorkServiceCollectionExtentions.cs",
+              "RelativeDocumentMoniker": "Helper\\UnitOfWorkServiceCollectionExtentions.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Helper\\UnitOfWorkServiceCollectionExtentions.cs",
+              "RelativeToolTip": "Helper\\UnitOfWorkServiceCollectionExtentions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:57:07.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IAnnouncementRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IAnnouncementRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IAnnouncementRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IAnnouncementRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Interfaces\\IAnnouncementRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAUwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:54:13.902Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "AnnouncementRepository.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\AnnouncementRepository.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\AnnouncementRepository.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\AnnouncementRepository.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Service\\Repository\\Implementation\\AnnouncementRepository.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAAOAAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:54:01.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ProductInventoryDBContext.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ProductInventoryDB\\ProductInventoryDBContext.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ProductInventoryDB\\ProductInventoryDBContext.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ProductInventoryDB\\ProductInventoryDBContext.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ProductInventoryDB\\ProductInventoryDBContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-31T07:26:39.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AnnouncementRequestModelValidator.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\AnnouncementRequestModelValidator.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\AnnouncementRequestModelValidator.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\ValidationClass\\AnnouncementRequestModelValidator.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\ValidationClass\\AnnouncementRequestModelValidator.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:44:30.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Page.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\CommonModel\\Page.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\CommonModel\\Page.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\CommonModel\\Page.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\CommonModel\\Page.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:42:06.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SearchPage.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\CommonModel\\SearchPage.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Model\\CommonModel\\SearchPage.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Model\\CommonModel\\SearchPage.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Model\\CommonModel\\SearchPage.cs",
+              "ViewState": "AgIAAAAAAAD4ZmZmZiYwwAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:42:29.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "HttpStatusCodeException.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\HttpStatusCodeException.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Common\\HttpStatusCodeException.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\HttpStatusCodeException.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Common\\HttpStatusCodeException.cs",
+              "ViewState": "AgIAABwAAAAAaGZmZmYGwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:41:45.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\Enums.cs",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Common\\Enums.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\Enums.cs",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Common\\Enums.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:41:37.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ProductInventoryTrackerAPI.Common.csproj",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj",
+              "RelativeDocumentMoniker": "..\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj",
+              "RelativeToolTip": "..\\ProductInventoryTrackerAPI.Common\\ProductInventoryTrackerAPI.Common.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-24T12:28:22.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "CustomMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Helper\\CustomMiddleware.cs",
+              "RelativeDocumentMoniker": "Helper\\CustomMiddleware.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Helper\\CustomMiddleware.cs",
+              "RelativeToolTip": "Helper\\CustomMiddleware.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:39:33.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "HttpStatusCodeExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Helper\\HttpStatusCodeExtensions.cs",
+              "RelativeDocumentMoniker": "Helper\\HttpStatusCodeExtensions.cs",
+              "ToolTip": "C:\\Users\\KrupaliKanzariya\\Downloads\\ProductInventoryTracker\\ProductInventoryTrackerAPI\\Helper\\HttpStatusCodeExtensions.cs",
+              "RelativeToolTip": "Helper\\HttpStatusCodeExtensions.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T12:39:36.849Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

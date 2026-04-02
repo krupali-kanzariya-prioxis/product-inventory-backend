@@ -1,0 +1,175 @@
+﻿using ProductInventoryTrackerAPI.Common;
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Service.Repository.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+
+namespace ProductInventoryTrackerAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UsersController : BaseController
+    {
+        private readonly IUserRepository _repository;
+        private readonly ILogger<UsersController> _logger;
+
+        public UsersController(IUserRepository repository, ILogger<UsersController> logger)
+        {
+            _repository = repository;
+            _logger = logger;
+        }
+
+        [HttpGet("list")]
+        [ProducesResponseType(typeof(Page), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetUsers([FromQuery] SearchRequestModel searchModel)
+        {
+            try
+            {
+                var parameters = FillParamesFromModel(searchModel);
+                var result = await _repository.GetUsersAsync(parameters);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetUsers");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("{userSid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetUserBySid(string userSid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(userSid))
+                    return BadRequest("User SID is required.");
+
+                var result = await _repository.GetUserBySidAsync(userSid);
+                if (result == null)
+                    return NotFound("User not found.");
+
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetUserBySid");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("add")]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> AddUser([FromBody] UserRequestModel model)
+        {
+            try
+            {
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.AddUserAsync(model);
+                return CreatedAtAction(nameof(GetUserBySid), new { userSid = result.UserSid }, result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in AddUser");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPut("update/{userSid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> UpdateUser(string userSid, [FromBody] UserRequestModel model)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(userSid))
+                    return BadRequest("User SID is required.");
+
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.UpdateUserAsync(userSid, model);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in UpdateUser");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpDelete("delete/{userSid}")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> DeleteUser(string userSid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(userSid))
+                    return BadRequest("User SID is required.");
+
+                await _repository.DeleteUserAsync(userSid);
+                return NoContent();
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in DeleteUser");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("email/{email}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetUserByEmail(string email)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(email))
+                    return BadRequest("Email is required.");
+
+                var result = await _repository.GetUserByEmailAsync(email);
+                if (result == null)
+                    return NotFound("User not found.");
+
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetUserByEmail");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+    }
+}

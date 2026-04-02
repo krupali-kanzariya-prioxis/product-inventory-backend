@@ -1,0 +1,121 @@
+﻿using ProductInventoryTrackerAPI.Common;
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Service.Repository.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+
+namespace ProductInventoryTrackerAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class StockTransactionsController : BaseController
+    {
+        private readonly IStockTransactionRepository _repository;
+        private readonly ILogger<StockTransactionsController> _logger;
+
+        public StockTransactionsController(IStockTransactionRepository repository, ILogger<StockTransactionsController> logger)
+        {
+            _repository = repository;
+            _logger = logger;
+        }
+
+        [HttpGet("list")]
+        [ProducesResponseType(typeof(Page), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetStockTransactions([FromQuery] SearchRequestModel searchModel)
+        {
+            try
+            {
+                var parameters = FillParamesFromModel(searchModel);
+                var result = await _repository.GetStockTransactionsAsync(parameters);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetStockTransactions");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("{transactionSid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetStockTransactionBySid(string transactionSid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(transactionSid))
+                    return BadRequest("Transaction SID is required.");
+
+                var result = await _repository.GetStockTransactionBySidAsync(transactionSid);
+                if (result == null)
+                    return NotFound("Transaction not found.");
+
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetStockTransactionBySid");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("add")]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> AddStockTransaction([FromBody] StockTransactionRequestModel model)
+        {
+            try
+            {
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.AddStockTransactionAsync(model);
+                return CreatedAtAction(nameof(GetStockTransactionBySid), new { transactionSid = result.StockTransactionSid }, result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in AddStockTransaction");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("product/{productSid}/history")]
+        [ProducesResponseType(typeof(Page), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetProductTransactionHistory(string productSid, [FromQuery] SearchRequestModel searchModel)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(productSid))
+                    return BadRequest("Product SID is required.");
+
+                var parameters = FillParamesFromModel(searchModel);
+                var result = await _repository.GetProductTransactionHistoryAsync(productSid, parameters);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetProductTransactionHistory");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+    }
+}

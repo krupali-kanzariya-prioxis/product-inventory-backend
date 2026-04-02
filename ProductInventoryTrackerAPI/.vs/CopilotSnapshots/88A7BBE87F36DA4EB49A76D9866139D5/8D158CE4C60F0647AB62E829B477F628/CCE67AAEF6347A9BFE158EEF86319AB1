@@ -1,0 +1,224 @@
+﻿using ProductInventoryTrackerAPI.Common;
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.ProductInventoryDB;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+using ProductInventoryTrackerAPI.Service.Repository.Interfaces;
+using ProductInventoryTrackerAPI.Service.UnitOfWork;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using static ProductInventoryTrackerAPI.Common.Enums;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Implementation
+{
+    public class CategoryRepository : ICategoryRepository
+    {
+        private readonly ProductInventoryDBContext _context;
+        private readonly ILogger<CategoryRepository> _logger;
+        private readonly IUnitOfWork _unitOfWork;
+
+        public CategoryRepository(
+            ProductInventoryDBContext context,
+            ILogger<CategoryRepository> logger,
+            IUnitOfWork unitOfWork)
+        {
+            _context = context;
+            _logger = logger;
+            _unitOfWork = unitOfWork;
+        }
+
+        public async Task<Page> GetCategoriesAsync(Dictionary<string, object> parameters)
+        {
+            try
+            {
+                var query = _context.Categories
+                    .Where(x => x.Status == (int)StatusTypeDB.Active)
+                    .AsQueryable();
+
+                var pageStart = Convert.ToInt32(parameters[Constants.SearchParameters.PageStart]);
+                var pageSize = Convert.ToInt32(parameters[Constants.SearchParameters.PageSize]);
+                var searchText = parameters[Constants.SearchParameters.SearchText]?.ToString() ?? "%";
+                var sortColumnInput = parameters[Constants.SearchParameters.SortColumn]?.ToString() ?? "CreatedAt";
+                var sortColumn = CommonHelper.ResolvePropertyName<Category>(sortColumnInput, "CreatedAt");
+                var sortOrder = parameters[Constants.SearchParameters.SortOrder]?.ToString() ?? "DESC";
+
+                if (searchText != "%")
+                {
+                    query = query.Where(x => x.CategoryName.Contains(searchText) || x.Description!.Contains(searchText));
+                }
+
+                var total = await query.CountAsync();
+
+                query = sortOrder.ToUpper() == "DESC"
+                    ? query.OrderByDescending(x => EF.Property<object>(x, sortColumn))
+                    : query.OrderBy(x => EF.Property<object>(x, sortColumn));
+
+                var categories = await query
+                    .Skip((pageStart - 1) * pageSize)
+                    .Take(pageSize)
+                    .Select(c => MapToResponse(c))
+                    .ToListAsync();
+
+                var page = new Page { Result = categories };
+                page.Meta.TotalResults = total;
+
+                return page;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching categories: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<CategoryResponseModel?> GetCategoryBySidAsync(string categorySid)
+        {
+            try
+            {
+                var category = await _unitOfWork
+                    .GetRepository<Category>()
+                    .SingleOrDefaultAsync(x => x.CategorySid == categorySid && x.Status == (int)StatusTypeDB.Active);
+
+                if (category == null)
+                    return null;
+
+                _logger.LogInformation("Fetched category with SID {Sid}", categorySid);
+                return MapToResponse(category);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching category: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<CategoryResponseModel> AddCategoryAsync(CategoryRequestModel model)
+        {
+            try
+            {
+                var entity = new Category
+                {
+                    CategorySid = CommonHelper.GenerateUniqueSID(Constants.SIDPrefixes.Category),
+                    CategoryName = model.CategoryName,
+                    Description = model.Description,
+                    Status = (int)StatusTypeDB.Active,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                await _unitOfWork.GetRepository<Category>().InsertAsync(entity);
+                await _unitOfWork.CommitAsync();
+
+                _logger.LogInformation("Added new category with SID {Sid}", entity.CategorySid);
+                return MapToResponse(entity);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error adding category: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<CategoryResponseModel> UpdateCategoryAsync(string categorySid, CategoryRequestModel model)
+        {
+            try
+            {
+                var category = await _unitOfWork
+                    .GetRepository<Category>()
+                    .SingleOrDefaultAsync(x => x.CategorySid == categorySid && x.Status == (int)StatusTypeDB.Active);
+
+                if (category == null)
+                    return null;
+
+                category.CategoryName = model.CategoryName;
+                category.Description = model.Description;
+                category.LastModifiedAt = DateTime.UtcNow;
+
+                _unitOfWork.GetRepository<Category>().Update(category);
+                await _unitOfWork.CommitAsync();
+
+                _logger.LogInformation("Updated category with SID {Sid}", categorySid);
+                return MapToResponse(category);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error updating category: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<bool> DeleteCategoryAsync(string categorySid)
+        {
+            try
+            {
+                var category = await _unitOfWork
+                    .GetRepository<Category>()
+                    .SingleOrDefaultAsync(x => x.CategorySid == categorySid && x.Status == (int)StatusTypeDB.Active);
+
+                if (category == null)
+                    return false;
+
+                category.Status = (int)StatusTypeDB.Delete;
+                category.LastModifiedAt = DateTime.UtcNow;
+
+                _unitOfWork.GetRepository<Category>().Update(category);
+                await _unitOfWork.CommitAsync();
+
+                _logger.LogInformation("Soft deleted category with SID {Sid}", categorySid);
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error deleting category: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<IEnumerable<SelectListItem>?> DDLCategoryAsync(
+            List<string>? filterSid = null,
+            List<int>? filterId = null)
+        {
+            try
+            {
+                var data = await _unitOfWork
+                    .GetRepository<Category>()
+                    .GetAllAsync(x => x.Status == (int)StatusTypeDB.Active);
+
+                if (data == null)
+                    return null;
+
+                if (filterSid != null && filterSid.Count > 0)
+                    data = data.Where(x => filterSid.Contains(x.CategorySid)).ToList();
+
+                if (filterId != null && filterId.Count > 0)
+                    data = data.Where(x => filterId.Contains(x.CategoryId)).ToList();
+
+                var dropdown = data.Select(x => new SelectListItem
+                {
+                    Value = x.CategorySid.ToString(),
+                    Text = x.CategoryName
+                }).OrderBy(x => x.Text);
+
+                return dropdown;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching category dropdown: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        private static CategoryResponseModel MapToResponse(Category category)
+        {
+            return new CategoryResponseModel
+            {
+                CategorySid = category.CategorySid,
+                CategoryName = category.CategoryName,
+                Description = category.Description,
+                Status = category.Status,
+                CreatedAt = category.CreatedAt,
+                LastModifiedAt = category.LastModifiedAt
+            };
+        }
+    }
+}

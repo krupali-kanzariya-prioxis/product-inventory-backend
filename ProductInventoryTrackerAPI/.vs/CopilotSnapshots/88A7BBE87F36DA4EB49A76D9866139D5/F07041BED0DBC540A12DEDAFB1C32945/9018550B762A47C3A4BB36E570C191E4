@@ -1,0 +1,199 @@
+﻿using ProductInventoryTrackerAPI.Common;
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.ProductInventoryDB;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+using ProductInventoryTrackerAPI.Service.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using static ProductInventoryTrackerAPI.Common.Enums;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Implementation
+{
+    public class UserRepository : IUserRepository
+    {
+        private readonly ProductInventoryDBContext _context;
+        private readonly ILogger<UserRepository> _logger;
+
+        public UserRepository(ProductInventoryDBContext context, ILogger<UserRepository> logger)
+        {
+            _context = context;
+            _logger = logger;
+        }
+
+        public async Task<Page> GetUsersAsync(Dictionary<string, object> parameters)
+        {
+            try
+            {
+                var pageStart = Convert.ToInt32(parameters[Constants.SearchParameters.PageStart]);
+                var pageSize = Convert.ToInt32(parameters[Constants.SearchParameters.PageSize]);
+                var searchText = parameters[Constants.SearchParameters.SearchText]?.ToString() ?? "%";
+                var sortColumn = parameters[Constants.SearchParameters.SortColumn]?.ToString() ?? "LastModifiedAt";
+                var sortOrder = parameters[Constants.SearchParameters.SortOrder]?.ToString() ?? "DESC";
+
+                var query = _context.Users.Where(x => x.Status == (int)StatusTypeDB.Active).AsQueryable();
+
+                if (searchText != "%")
+                {
+                    query = query.Where(x => x.FullName.Contains(searchText) || x.Email.Contains(searchText));
+                }
+
+                var total = await query.CountAsync();
+                query = sortOrder.ToUpper() == "DESC"
+                    ? query.OrderByDescending(x => EF.Property<object>(x, sortColumn))
+                    : query.OrderBy(x => EF.Property<object>(x, sortColumn));
+
+                var users = await query.Skip((pageStart - 1) * pageSize).Take(pageSize)
+                    .Select(u => MapToResponse(u)).ToListAsync();
+
+                return new Page { TotalRecords = total, Result = users };
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching users: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<UserResponseModel?> GetUserBySidAsync(string userSid)
+        {
+            try
+            {
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(x => x.UserSid == userSid && x.Status == (int)StatusTypeDB.Active);
+                if (user == null) return null;
+                _logger.LogInformation("Fetched user with SID {Sid}", userSid);
+                return MapToResponse(user);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching user: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<UserResponseModel> AddUserAsync(UserRequestModel model)
+        {
+            try
+            {
+                var existingUser = await _context.Users
+                    .FirstOrDefaultAsync(x => x.Email == model.Email && x.Status == (int)StatusTypeDB.Active);
+                if (existingUser != null)
+                    throw new HttpStatusCodeException(400, "Email already exists.");
+
+                var entity = new User
+                {
+                    UserSid = "USR" + Guid.NewGuid().ToString("N").Substring(0, 13).ToUpper(),
+                    FullName = model.FullName,
+                    Email = model.Email,
+                    Role = model.Role,
+                    Status = (int)StatusTypeDB.Active,
+                    CreatedAt = DateTime.UtcNow
+                };
+                _context.Users.Add(entity);
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("Added new user with SID {Sid}", entity.UserSid);
+                return MapToResponse(entity);
+            }
+            catch (HttpStatusCodeException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error adding user: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<UserResponseModel> UpdateUserAsync(string userSid, UserRequestModel model)
+        {
+            try
+            {
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(x => x.UserSid == userSid && x.Status == (int)StatusTypeDB.Active);
+                if (user == null)
+                    throw new HttpStatusCodeException(404, "User not found.");
+
+                var existingUser = await _context.Users
+                    .FirstOrDefaultAsync(x => x.Email == model.Email && x.UserSid != userSid && x.Status == (int)StatusTypeDB.Active);
+                if (existingUser != null)
+                    throw new HttpStatusCodeException(400, "Email already exists.");
+
+                user.FullName = model.FullName;
+                user.Email = model.Email;
+                user.Role = model.Role;
+                user.LastModifiedAt = DateTime.UtcNow;
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("Updated user with SID {Sid}", userSid);
+                return MapToResponse(user);
+            }
+            catch (HttpStatusCodeException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error updating user: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task DeleteUserAsync(string userSid)
+        {
+            try
+            {
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(x => x.UserSid == userSid && x.Status == (int)StatusTypeDB.Active);
+                if (user == null)
+                    throw new HttpStatusCodeException(404, "User not found.");
+                user.Status = (int)StatusTypeDB.Delete;
+                user.LastModifiedAt = DateTime.UtcNow;
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+                _logger.LogInformation("Soft deleted user with SID {Sid}", userSid);
+            }
+            catch (HttpStatusCodeException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error deleting user: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<UserResponseModel?> GetUserByEmailAsync(string email)
+        {
+            try
+            {
+                var user = await _context.Users
+                    .FirstOrDefaultAsync(x => x.Email == email && x.Status == (int)StatusTypeDB.Active);
+                if (user == null) return null;
+                _logger.LogInformation("Fetched user with email {Email}", email);
+                return MapToResponse(user);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching user by email: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        private static UserResponseModel MapToResponse(User user)
+        {
+            return new UserResponseModel
+            {
+                UserSid = user.UserSid,
+                FullName = user.FullName,
+                Email = user.Email,
+                Role = user.Role,
+                Status = user.Status,
+                CreatedAt = user.CreatedAt,
+                LastModifiedAt = user.LastModifiedAt
+            };
+        }
+    }
+}

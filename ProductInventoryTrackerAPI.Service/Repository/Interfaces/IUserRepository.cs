@@ -1,0 +1,18 @@
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Interfaces
+{
+    public interface IUserRepository
+    {
+        Task<Page> GetUsersAsync(Dictionary<string, object> parameters);
+        Task<UserResponseModel?> GetUserBySidAsync(string userSid);
+        Task<UserResponseModel> AddUserAsync(UserRequestModel model);
+        Task<UserResponseModel> UpdateUserAsync(string userSid, UserRequestModel model);
+        Task<bool> DeleteUserAsync(string userSid);
+        Task<UserResponseModel?> GetUserByEmailAsync(string email);
+        Task<IEnumerable<SelectListItem>?> DDLUserAsync(List<string>? filterSid = null, List<int>? filterId = null);
+    }
+}

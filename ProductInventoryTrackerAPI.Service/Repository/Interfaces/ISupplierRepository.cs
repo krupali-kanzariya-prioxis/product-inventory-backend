@@ -1,0 +1,17 @@
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+using Microsoft.AspNetCore.Mvc.Rendering;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Interfaces
+{
+    public interface ISupplierRepository
+    {
+        Task<Page> GetSuppliersAsync(Dictionary<string, object> parameters);
+        Task<SupplierResponseModel?> GetSupplierBySidAsync(string supplierSid);
+        Task<SupplierResponseModel> AddSupplierAsync(SupplierRequestModel model);
+        Task<SupplierResponseModel> UpdateSupplierAsync(string supplierSid, SupplierRequestModel model);
+        Task<bool> DeleteSupplierAsync(string supplierSid);
+        Task<IEnumerable<SelectListItem>?> DDLSupplierAsync(List<string>? filterSid = null, List<int>? filterId = null);
+    }
+}

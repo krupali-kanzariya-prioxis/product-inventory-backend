@@ -1,0 +1,16 @@
+﻿using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Interfaces
+{
+    public interface IProductRepository
+    {
+        Task<Page> GetProductsAsync(Dictionary<string, object> parameters);
+        Task<ProductResponseModel?> GetProductBySidAsync(string productSid);
+        Task<ProductResponseModel> AddProductAsync(ProductRequestModel model);
+        Task<ProductResponseModel> UpdateProductAsync(string productSid, ProductRequestModel model);
+        Task DeleteProductAsync(string productSid);
+        Task<Page> GetLowStockProductsAsync(Dictionary<string, object> parameters);
+    }
+}

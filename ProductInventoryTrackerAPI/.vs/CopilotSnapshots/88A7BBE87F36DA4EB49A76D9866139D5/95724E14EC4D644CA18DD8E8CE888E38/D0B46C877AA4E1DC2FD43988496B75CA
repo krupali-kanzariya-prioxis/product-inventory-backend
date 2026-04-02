@@ -1,0 +1,170 @@
+﻿using ProductInventoryTrackerAPI.Common;
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Service.Repository.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
+
+namespace ProductInventoryTrackerAPI.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ProductsController : BaseController
+    {
+        private readonly IProductRepository _repository;
+        private readonly ILogger<ProductsController> _logger;
+
+        public ProductsController(IProductRepository repository, ILogger<ProductsController> logger)
+        {
+            _repository = repository;
+            _logger = logger;
+        }
+
+        [HttpGet("list")]
+        [ProducesResponseType(typeof(Page), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetProducts([FromQuery] SearchRequestModel searchModel)
+        {
+            try
+            {
+                var parameters = FillParamesFromModel(searchModel);
+                var result = await _repository.GetProductsAsync(parameters);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetProducts");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("{productSid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetProductBySid(string productSid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(productSid))
+                    return BadRequest("Product SID is required.");
+
+                var result = await _repository.GetProductBySidAsync(productSid);
+                if (result == null)
+                    return NotFound("Product not found.");
+
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetProductBySid");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPost("add")]
+        [ProducesResponseType((int)HttpStatusCode.Created)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> AddProduct([FromBody] ProductRequestModel model)
+        {
+            try
+            {
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.AddProductAsync(model);
+                return CreatedAtAction(nameof(GetProductBySid), new { productSid = result.ProductSid }, result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in AddProduct");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpPut("update/{productSid}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> UpdateProduct(string productSid, [FromBody] ProductRequestModel model)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(productSid))
+                    return BadRequest("Product SID is required.");
+
+                if (model == null)
+                    return BadRequest("Invalid request.");
+
+                var result = await _repository.UpdateProductAsync(productSid, model);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in UpdateProduct");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpDelete("delete/{productSid}")]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> DeleteProduct(string productSid)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(productSid))
+                    return BadRequest("Product SID is required.");
+
+                await _repository.DeleteProductAsync(productSid);
+                return NoContent();
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in DeleteProduct");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("low-stock")]
+        [ProducesResponseType(typeof(Page), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> GetLowStockProducts([FromQuery] SearchRequestModel searchModel)
+        {
+            try
+            {
+                var parameters = FillParamesFromModel(searchModel);
+                var result = await _repository.GetLowStockProductsAsync(parameters);
+                return Ok(result);
+            }
+            catch (HttpStatusCodeException ex)
+            {
+                return StatusCode(ex.StatusCode, ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error in GetLowStockProducts");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+    }
+}

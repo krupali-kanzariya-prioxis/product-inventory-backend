@@ -1,0 +1,263 @@
+using ProductInventoryTrackerAPI.Common;
+using ProductInventoryTrackerAPI.Model.CommonModel;
+using ProductInventoryTrackerAPI.Model.ProductInventoryDB;
+using ProductInventoryTrackerAPI.Model.RequestModel;
+using ProductInventoryTrackerAPI.Model.ResponseModel;
+using ProductInventoryTrackerAPI.Model.SpDbContext;
+using ProductInventoryTrackerAPI.Service.Repository.Interfaces;
+using ProductInventoryTrackerAPI.Service.RepositoryFactory;
+using ProductInventoryTrackerAPI.Service.UnitOfWork;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using static ProductInventoryTrackerAPI.Common.Enums;
+
+namespace ProductInventoryTrackerAPI.Service.Repository.Implementation
+{
+    public class UserRepository : IUserRepository
+    {
+        private readonly ProductInventoryDBContext _context;
+        private readonly ILogger<UserRepository> _logger;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly ProductSpContext _spContext;
+
+        public UserRepository(
+            ProductInventoryDBContext context,
+            ILogger<UserRepository> logger,
+            IUnitOfWork unitOfWork,
+            ProductSpContext spContext)
+        {
+            _context = context;
+            _logger = logger;
+            _unitOfWork = unitOfWork;
+            _spContext = spContext;
+        }
+
+        public async Task<Page> GetUsersAsync(Dictionary<string, object> parameters)
+        {
+            try
+            {
+                var xmlParam = CommonHelper.DictionaryToXml(parameters, "Search");
+                object[] param = { xmlParam };
+
+                var result = await _spContext.ExecutreStoreProcedureResultList(Constants.StoredProcedures.GetUserList, param);
+
+                var jsonResult = JsonConvert.DeserializeObject<List<UserResponseModel>>(
+                    result.Result?.ToString() ?? "[]",
+                    new JsonSerializerSettings
+                    {
+                        ContractResolver = new DefaultContractResolver
+                        {
+                            NamingStrategy = new SnakeCaseNamingStrategy()
+                        }
+                    }) ?? [];
+
+                result.Result = jsonResult;
+                return result;
+            }
+            catch (Exception e)
+            {
+                var errorMessage = e.InnerException?.Message ?? e.Message;
+                _logger.LogError(e, "SQL execution failed: {Message}", errorMessage);
+                throw new HttpStatusCodeException(500, errorMessage);
+            }
+        }
+
+        public async Task<UserResponseModel?> GetUserBySidAsync(string userSid)
+        {
+            try
+            {
+                var user = await _unitOfWork
+                    .GetRepository<User>()
+                    .SingleOrDefaultAsync(x => x.UserSid == userSid && x.Status == (int)StatusTypeDB.Active);
+
+                if (user == null)
+                    return null;
+
+                _logger.LogInformation("Fetched user with SID {Sid}", userSid);
+                return MapToResponse(user);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching user: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<UserResponseModel> AddUserAsync(UserRequestModel model)
+        {
+            try
+            {
+                var existingUser = await _unitOfWork
+                    .GetRepository<User>()
+                    .SingleOrDefaultAsync(x => x.Email == model.Email && x.Status == (int)StatusTypeDB.Active);
+
+                if (existingUser != null)
+                    throw new HttpStatusCodeException(400, "Email already exists.");
+
+                var entity = new User
+                {
+                    UserSid = CommonHelper.GenerateUniqueSID(Constants.SIDPrefixes.User),
+                    FullName = model.FullName,
+                    Email = model.Email,
+                    Role = model.Role,
+                    Status = (int)StatusTypeDB.Active,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                await _unitOfWork.GetRepository<User>().InsertAsync(entity);
+                await _unitOfWork.CommitAsync();
+
+                _logger.LogInformation("Added new user with SID {Sid}", entity.UserSid);
+                return MapToResponse(entity);
+            }
+            catch (HttpStatusCodeException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error adding user: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<UserResponseModel> UpdateUserAsync(string userSid, UserRequestModel model)
+        {
+            try
+            {
+                var user = await _unitOfWork
+                    .GetRepository<User>()
+                    .SingleOrDefaultAsync(x => x.UserSid == userSid && x.Status == (int)StatusTypeDB.Active);
+
+                if (user == null)
+                    return null;
+
+                var existingUser = await _unitOfWork
+                    .GetRepository<User>()
+                    .SingleOrDefaultAsync(x => x.Email == model.Email && x.UserSid != userSid && x.Status == (int)StatusTypeDB.Active);
+
+                if (existingUser != null)
+                    throw new HttpStatusCodeException(400, "Email already exists.");
+
+                user.FullName = model.FullName;
+                user.Email = model.Email;
+                user.Role = model.Role;
+                user.LastModifiedAt = DateTime.UtcNow;
+
+                _unitOfWork.GetRepository<User>().Update(user);
+                await _unitOfWork.CommitAsync();
+
+                _logger.LogInformation("Updated user with SID {Sid}", userSid);
+                return MapToResponse(user);
+            }
+            catch (HttpStatusCodeException)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error updating user: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<bool> DeleteUserAsync(string userSid)
+        {
+            try
+            {
+                var user = await _unitOfWork
+                    .GetRepository<User>()
+                    .SingleOrDefaultAsync(x => x.UserSid == userSid && x.Status == (int)StatusTypeDB.Active);
+
+                if (user == null)
+                    return false;
+
+                user.Status = (int)StatusTypeDB.Delete;
+                user.LastModifiedAt = DateTime.UtcNow;
+
+                _unitOfWork.GetRepository<User>().Update(user);
+                await _unitOfWork.CommitAsync();
+
+                _logger.LogInformation("Soft deleted user with SID {Sid}", userSid);
+                return true;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error deleting user: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<UserResponseModel?> GetUserByEmailAsync(string email)
+        {
+            try
+            {
+                var user = await _unitOfWork
+                    .GetRepository<User>()
+                    .SingleOrDefaultAsync(x => x.Email == email && x.Status == (int)StatusTypeDB.Active);
+
+                if (user == null)
+                    return null;
+
+                _logger.LogInformation("Fetched user with email {Email}", email);
+                return MapToResponse(user);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching user by email: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        public async Task<IEnumerable<SelectListItem>?> DDLUserAsync(
+            List<string>? filterSid = null,
+            List<int>? filterId = null)
+        {
+            try
+            {
+                var data = await _unitOfWork
+                    .GetRepository<User>()
+                    .GetAllAsync(x => x.Status == (int)StatusTypeDB.Active);
+
+                if (data == null)
+                    return null;
+
+                if (filterSid != null && filterSid.Count > 0)
+                    data = data.Where(x => filterSid.Contains(x.UserSid)).ToList();
+
+                if (filterId != null && filterId.Count > 0)
+                    data = data.Where(x => filterId.Contains(x.UserId)).ToList();
+
+                var dropdown = data.Select(x => new SelectListItem
+                {
+                    Value = x.UserSid.ToString(),
+                    Text = x.FullName
+                }).OrderBy(x => x.Text);
+
+                return dropdown;
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, "Error fetching user dropdown: {Message}", e.Message);
+                throw new HttpStatusCodeException(500, e.InnerException?.Message ?? e.Message);
+            }
+        }
+
+        private static UserResponseModel MapToResponse(User user)
+        {
+            return new UserResponseModel
+            {
+                UserSid = user.UserSid,
+                FullName = user.FullName,
+                Email = user.Email,
+                Role = user.Role,
+                Status = user.Status,
+                CreatedAt = user.CreatedAt,
+                LastModifiedAt = user.LastModifiedAt
+            };
+        }
+    }
+}
