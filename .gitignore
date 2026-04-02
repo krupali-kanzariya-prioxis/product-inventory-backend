@@ -52,3 +52,7 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+/ProductInventoryTrackerAPI/.vs/ProductInventoryTrackerAPI/CopilotIndices/18.3.511.5503
+/ProductInventoryTrackerAPI/.vs/ProductInventoryTrackerAPI.slnx/FileContentIndex
+/ProductInventoryTrackerAPI/.vs/ProductInventoryTrackerAPI.slnx/v18
+/ProductInventoryTrackerAPI
