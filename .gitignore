@@ -29,5 +29,9 @@
 *.DS_Store
 Thumbs.db
 
+# Temporary alternate build outputs used for local MCP validation
+/ProductInventoryTrackerAPI/temp-mcp-build-output/
+/ProductInventoryTrackerAPI/temp-mcp-build-output-*/
+
 obj/
 bin/

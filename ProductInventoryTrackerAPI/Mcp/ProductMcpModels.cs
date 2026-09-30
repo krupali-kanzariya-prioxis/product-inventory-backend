@@ -28,6 +28,15 @@ public sealed class ProductMcpItem
     [Description("The product SKU.")]
     public string Sku { get; set; } = string.Empty;
 
+    [Description("The product description. This helps the model preserve the existing value during partial updates.")]
+    public string? Description { get; set; }
+
+    [Description("The category SID, when one is assigned. Use this value during partial updates if the category should stay unchanged.")]
+    public string? CategorySid { get; set; }
+
+    [Description("The supplier SID, when one is assigned. Use this value during partial updates if the supplier should stay unchanged.")]
+    public string? SupplierSid { get; set; }
+
     [Description("The category name, when one is assigned.")]
     public string? CategoryName { get; set; }
 
@@ -48,6 +57,18 @@ public sealed class ProductMcpItem
 
     [Description("The last modification time in UTC, when available.")]
     public DateTime? LastModifiedAt { get; set; }
+}
+
+public sealed class ProductPartialUpdateRequest
+{
+    public string? ProductName { get; set; }
+    public string? Sku { get; set; }
+    public string? Description { get; set; }
+    public string? CategorySid { get; set; }
+    public string? SupplierSid { get; set; }
+    public decimal? UnitPrice { get; set; }
+    public int? CurrentStock { get; set; }
+    public int? ReorderThreshold { get; set; }
 }
 
 public sealed class ProductSummaryToolResult

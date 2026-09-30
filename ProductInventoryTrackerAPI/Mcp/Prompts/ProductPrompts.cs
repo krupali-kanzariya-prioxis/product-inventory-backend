@@ -19,7 +19,8 @@ Workflow:
 2. If low-stock products need more detail, call the tool search_products with lowStockOnly=true.
 3. If a specific product needs inspection, read the resource app://products/{productSid}.
 4. Summarize the current inventory health, highlight low-stock items, and suggest a concise follow-up plan.
-5. Ask for confirmation before calling any write tool such as create_product or update_product.
+5. If you recommend updating a product, call get_product first to confirm the current values and only send the fields that need to change.
+6. Ask for confirmation before calling any write tool such as create_product or update_product.
 
 Keep the final answer concise and explicitly separate observations from proposed actions.
 """;
@@ -38,7 +39,8 @@ Workflow:
 2. Call search_products with lowStockOnly=true and limit={{limit}}.
 3. Group the results by urgency using current stock versus reorder threshold.
 4. If you need deeper context for any one item, read app://products/{productSid}.
-5. Recommend the next actions, but ask for confirmation before using create_product or update_product.
+5. Before recommending update_product, call get_product for the chosen item and only send the fields that need to change.
+6. Recommend the next actions, but ask for confirmation before using create_product or update_product.
 
 Do not guess product SIDs. Look them up first and keep the response concise.
 """;

@@ -31,9 +31,9 @@ flowchart LR
 | Name | Purpose | Mode |
 |---|---|---|
 | `search_products` | Search active products or list low-stock products with a capped result set | Read-only |
-| `get_product` | Get one product by product SID | Read-only |
+| `get_product` | Get one product by product SID, including description, `categorySid`, and `supplierSid` so partial updates can preserve current values | Read-only |
 | `create_product` | Create a new product after user confirmation | Write |
-| `update_product` | Update an existing product after user confirmation | Write |
+| `update_product` | Partially update an existing product after user confirmation; only send the fields that need to change and omitted fields keep their current values | Write |
 | `get_inventory_summary` | Get a concise inventory summary with counts and low-stock totals | Read-only |
 
 ## MCP resources
@@ -52,7 +52,7 @@ flowchart LR
 ## Agent Skill
 The repo also includes a separate Agent Skill at `skills/product-planning/`.
 
-- Claude Code: copy `skills/product-planning` into `.claude/skills/` in the project or into `~/.claude/skills/`.
+- Claude Code: copy `skills/product-planning` into `.claude/skills/` in the project or into `~/.claude/skills/`, or run `powershell -ExecutionPolicy Bypass -File .\scripts\install-skill.ps1` from the repo root.
 - Claude.ai / Claude Desktop: zip the `skills/product-planning` folder and upload it in **Settings > Capabilities**. Verify the exact upload steps in the latest Anthropic documentation.
 
 ## Run and verify
@@ -70,7 +70,8 @@ Launch profiles currently expose:
 2. Choose transport: **Streamable HTTP**
 3. Use URL: `http://localhost:5105/mcp`
 4. Verify that tools, resources, and prompts are listed
-5. Call each item to confirm the server can read and write through the existing product logic
+5. Call each item to confirm the server can read and write through the existing product logic.
+6. For `update_product`, first call `get_product`, then send only the fields you want to change.
 
 ### Connect Claude Code
 `claude mcp add --transport http product-inventory http://localhost:5105/mcp`

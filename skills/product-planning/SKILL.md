@@ -18,6 +18,7 @@ Use this skill to reason about product inventory with the Product Inventory Trac
 ## Rules
 - Never delete anything.
 - Never guess product SIDs; look them up first.
+- Before `update_product`, call `get_product` to confirm the current values, and only send the fields that need to change.
 - Keep output concise and action-oriented.
 - Say exactly what changed after any write tool call.
 - Prefer read-only resources and tools before write actions.
