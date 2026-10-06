@@ -67,16 +67,23 @@ public sealed class ProductMcpService
     {
         ValidateProductRequest(model, "create_product");
 
-        var created = await _productRepository.AddProductAsync(model);
-        var product = await LoadActiveProductAsync(created.ProductSid, cancellationToken, "create_product");
+        try
+        {
+            var created = await _productRepository.AddProductAsync(model);
+            var product = await LoadActiveProductAsync(created.ProductSid, cancellationToken, "create_product");
 
-        _logger.LogInformation(
-            "MCP write {Operation} for product {ProductSid}. Fields changed: {ChangedFields}",
-            "create_product",
-            product.ProductSid,
-            string.Join(", ", GetCreateFieldNames(model)));
+            _logger.LogInformation(
+                "MCP write {Operation} for product {ProductSid}. Fields changed: {ChangedFields}",
+                "create_product",
+                product.ProductSid,
+                string.Join(", ", GetCreateFieldNames(model)));
 
-        return MapToMcpItem(product);
+            return MapToMcpItem(product);
+        }
+        catch (HttpStatusCodeException ex)
+        {
+            throw TranslateRepositoryException("create_product", ex);
+        }
     }
 
     public async Task<ProductMcpItem> UpdateProductAsync(string productSid, ProductPartialUpdateRequest changes, CancellationToken cancellationToken)
@@ -88,21 +95,28 @@ public sealed class ProductMcpService
         var mergedRequest = MergeUpdate(existingProduct, changes);
         ValidateProductRequest(mergedRequest, "update_product");
 
-        var updated = await _productRepository.UpdateProductAsync(normalizedSid, mergedRequest);
-        if (updated == null)
+        try
         {
-            throw CreateInputException("update_product", $"No active product was found for SID '{normalizedSid}'. Use search_products to find a valid SID.");
+            var updated = await _productRepository.UpdateProductAsync(normalizedSid, mergedRequest);
+            if (updated == null)
+            {
+                throw CreateInputException("update_product", $"No active product was found for SID '{normalizedSid}'. Use search_products to find a valid SID.");
+            }
+
+            var refreshedProduct = await LoadActiveProductAsync(updated.ProductSid, cancellationToken, "update_product");
+
+            _logger.LogInformation(
+                "MCP write {Operation} for product {ProductSid}. Fields changed: {ChangedFields}",
+                "update_product",
+                refreshedProduct.ProductSid,
+                string.Join(", ", GetChangedFieldNames(changes)));
+
+            return MapToMcpItem(refreshedProduct);
         }
-
-        var refreshedProduct = await LoadActiveProductAsync(updated.ProductSid, cancellationToken, "update_product");
-
-        _logger.LogInformation(
-            "MCP write {Operation} for product {ProductSid}. Fields changed: {ChangedFields}",
-            "update_product",
-            refreshedProduct.ProductSid,
-            string.Join(", ", GetChangedFieldNames(changes)));
-
-        return MapToMcpItem(refreshedProduct);
+        catch (HttpStatusCodeException ex)
+        {
+            throw TranslateRepositoryException("update_product", ex);
+        }
     }
 
     public async Task<ProductSummaryToolResult> GetInventorySummaryAsync(CancellationToken cancellationToken)
@@ -436,6 +450,23 @@ Product inventory domain
         {
             yield return nameof(changes.ReorderThreshold);
         }
+    }
+
+    private McpException TranslateRepositoryException(string operationName, HttpStatusCodeException exception)
+    {
+        var message = exception.StatusCode switch
+        {
+            404 => $"{exception.Message} Use search_products to find a valid SID before retrying.",
+            400 when exception.Message.Contains("category", StringComparison.OrdinalIgnoreCase)
+                => $"{exception.Message} Use the REST dropdown/list APIs or existing product data to supply a valid categorySid, or omit categorySid to leave it unchanged.",
+            400 when exception.Message.Contains("supplier", StringComparison.OrdinalIgnoreCase)
+                => $"{exception.Message} Use the REST dropdown/list APIs or existing product data to supply a valid supplierSid, or omit supplierSid to leave it unchanged.",
+            400 => $"{exception.Message} Review the tool arguments, call get_product first for the latest values, and then retry with corrected input.",
+            _ => exception.Message
+        };
+
+        _logger.LogWarning(exception, "MCP repository error for {Operation}: {Message}", operationName, message);
+        return new McpException(message);
     }
 
     private McpException CreateInputException(string operationName, string message)

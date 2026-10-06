@@ -35,7 +35,7 @@ public sealed class ProductTools
     }
 
     [McpServerTool(Name = "create_product", Destructive = false)]
-    [Description("Use this tool to create a new product in the inventory system after the user has confirmed the write action.")]
+    [Description("Use this tool to create a new product in the inventory system after the user has confirmed the write action. This write is non-destructive. In later phases, prefer dry-run/confirmation-aware flows when available.")]
     public Task<ProductMcpItem> CreateProductAsync(
         [Description("The human-readable product name.")] string productName,
         [Description("The unique SKU for the new product.")] string sku,
@@ -61,7 +61,7 @@ public sealed class ProductTools
     }
 
     [McpServerTool(Name = "update_product", Destructive = false, Idempotent = true)]
-    [Description("Use this tool to partially update an existing product after the user has confirmed the write action. Call get_product first to inspect the current values, then only provide the fields you want to change; omitted fields keep their current values.")]
+    [Description("Use this tool to partially update an existing product after the user has confirmed the write action. Call get_product first to inspect the current values, then only provide the fields you want to change; omitted fields keep their current values. This write is non-destructive and intended to be idempotent for the same final field values.")]
     public Task<ProductMcpItem> UpdateProductAsync(
         [Description("The product SID for the item to update.")] string productSid,
         [Description("Optional new human-readable product name. Leave this blank to keep the current value.")] string productName = "",
